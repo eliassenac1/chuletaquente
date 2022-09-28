@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Churrasqueiro & Churrascow</title>
+    <title>Chulleta Quente</title>
 </head>
 
 <body class="fundofixo">
@@ -21,7 +21,7 @@
                     <span class="glyphicon glyphicon-phone-alt"></span>&nbsp; (11) 2585-9200
                     <br>
                     <span class="glyphicon glyphicon-envelope"></span>&nbsp; <a href="mailto:contato@boizinho.com.br?subject=contato via site&cc=marconysbatera@gmail.com">
-                        contato@boizinho.com.br
+                        contato@Chulleta.com.br
                     </a>
                 </address>
                 <div class="embed-responsive embed-responsive-4by3">
@@ -117,9 +117,9 @@
         <div class="col-sm-12">
             <div class="panel-footer">
                 <h6 class="text-danger text-center">
-                    &copy; Copyright Desenvolvido por Marconys Pinheiro - AlunoTI91.
+                    &copy; Copyright Desenvolvido por Elias Souza - Vieira.
                     <br>
-                    <a href="https://github.com/marconys">https://marconys.github.io/Portifolio/</a>
+                    <a href="https://github.com/eliassenac1">Elias.com.br</a>
                 </h6>
             </div>
         </div>

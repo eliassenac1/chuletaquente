@@ -1,7 +1,7 @@
 <?php
 
 $hostname_conexao = "localhost";
-$database_conexao = "sistemaDB";
+$database_conexao = "sistematiDB";
 $username_conexao = "root";
 $password_conexao ="";
 $charset_conexao = "utf8";

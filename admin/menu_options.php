@@ -18,7 +18,7 @@
 <!-- ADM PRODUTOS --> 
 <div class="col-sm-6 col-md-4">
     <div class="thumbnail alert-danger">
-        <img src="../images/icone_produtos.png" alt="">
+        <img src="" alt="">
         <br>
         <div class="alert-danger">
             <!-- Botão principal -->                    
@@ -58,7 +58,7 @@
 <!-- ADM TIPOS --> 
 <div class="col-sm-6 col-md-4">
     <div class="thumbnail alert-warning">
-        <img src="../images/icone_tipos.png" alt="">
+        <img src="" alt="">
         <br>
         <div class="alert-warning">
             <!-- Botão principal -->                    
@@ -98,7 +98,7 @@
 <!-- ADM USUÁRIOS --> 
 <div class="col-sm-6 col-md-4">
     <div class="thumbnail alert-info">
-        <img src="../images/icone_user.png" alt="">
+        <img src="" alt="">
         <br>
         <div class="alert-info">
             <!-- Botão principal -->                    

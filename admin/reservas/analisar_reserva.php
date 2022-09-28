@@ -52,7 +52,20 @@ $lista_fk = $conexao->query($consulta_fk);
 $linha_fk = $lista_fk->fetch_assoc();
 $totalLinha_fk = $lista_fk->num_rows;
 
+//Chave estrangeira mesa seleciona apenas as mesas com status disponível
+$query_mesa = "select * from tbmesa where status_da_mesa = 'Disponível'";
 
+$lista_mesa = $conexao->query($query_mesa);
+$linha_mesa = $lista_mesa->fetch_assoc();
+$totalMesa = $lista_mesa->num_rows;
+
+//Inserindo id_reserva e alterando o status de mesa na tabela tbmesa
+$query = "update tbmesa
+                            set 
+                            id_reserva_mesa = $id_alterar,
+                            status_da_mesa = 'Ocupada' where id_mesa = id_mesa";
+
+    $resultado = $conexao->query($query);
 
 ?>
 
@@ -114,7 +127,19 @@ $totalLinha_fk = $lista_fk->num_rows;
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
                                 </span>
-                                <input class="form-control" type="number" name="numero_mesa_reserva" id="numero_mesa_reserva" value="<?php echo $linha["numero_mesa_reserva"]; ?>">
+                                <select name="numero_mesa_reserva" id="numero_mesa_reserva" class="form-control" required>
+                                    <?php do { ?>
+                                        <option value="<?php echo $linha_mesa['id_mesa']; ?>">
+                                            <?php echo $linha_mesa['numero_da_mesa']; ?>
+                                        </option>
+                                    <?php } while ($linha_mesa = $lista_mesa->fetch_assoc());
+                                    $linha_mesa = mysqli_num_rows($lista_mesa);
+                                    if ($linha_mesa > 0) {
+                                        mysqli_data_seek($lista_mesa, 0);
+                                        $linha_mesa = $lista_mesa->fetch_assoc();
+                                    }
+                                    ?>
+                                </select>
                             </div>
                             <br>
                             <!-- number valor_reserva -->

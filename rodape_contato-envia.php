@@ -47,13 +47,13 @@
                 $email->Port = "587";
                 $email->SMTPSecure = "tls";
                 $email->SMTPAuth = "true";
-                $email->Username = "marconyspinheiro@yahoo.com.br";
+                $email->Username = "elias@yahoo.com.br";
                 $email->Password = "";
 
                 //Configuração da msg                
-                $email->setFrom($email->Username, "Churrasqueiro & Churrascow"); // remetente
-                $email->addAddress('marconysbatera@gmail.com'); // destinatário
-                $email->Subject = "Churrascow? Fale Conosco";
+                $email->setFrom($email->Username, "Chulleta Quente"); // remetente
+                $email->addAddress('elias@gmail.com'); // destinatário
+                $email->Subject = "Chulleta Quente? Fale Conosco";
                 
                 //Verifica se há anexos
                 if (

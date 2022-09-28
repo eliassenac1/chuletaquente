@@ -58,7 +58,7 @@ include('./conexoes/conexao.php');
                 <div class="thumbnail">
                     <div class="breadcrumb tex-danger">
                         <h2 class="titulo">R$ RODÍZO 99,90</h2>
-                        <h4>Em reservas para mais de 5 pessoas, o titular da reserva paga apenas <strong>29,90</strong> no rodízio, e ganha mais 10%
+                        <h4>Em reservas para mais de 10 pessoas, o titular da reserva paga apenas <strong>49,90</strong> no rodízio, e ganha mais 30%
                             de desconto em todas as bebidas nas comadas associadas a mesa da reserva!
                         </h4>
                         <h5>As reservas são permitidas com um prazo mínimo de 12 horas de antecedência

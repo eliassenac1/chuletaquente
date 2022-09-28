@@ -14,26 +14,9 @@ if ($_POST) {
     $numero_pessoas = $_POST['numero_pessoas_reserva'];
     $motivo_reserva = $_POST['motivo_reserva'];
     $id_cliente_reserva = $id_cliente;
-
-    //Calcula a diferença de dias entre a data atual e a data da reserva
-    $hoje = new DateTime('now');
-    $data_ecolhida = new DateTime($_POST['data_reserva']);
-    $interval = $data_ecolhida->diff($hoje);
-    $dias = $interval->d;
-    $horas = $interval->h;
-    
-    
-
-    //Verifica se o prazo da reserva atende o mínimo de 12 Horas e máximo de  60 dias
-    if ($dias > 60  && $horas < 12 ) {      
-
-        header("location: ../../reserva/pedido-erro.php");
-
-
-    }else{
         
 
-            $campos_insert = "id_cliente_reserva, data_reserva,hora_reserva,numero_pessoas_reserva,motivo_reserva";
+            $campos_insert = "id_cliente_reserva, data_reserva, hora_reserva, numero_pessoas_reserva, motivo_reserva";
             $values = "$id_cliente_reserva,'$data_reserva','$hora_reserva',$numero_pessoas,'$motivo_reserva'";
 
 
@@ -50,7 +33,7 @@ if ($_POST) {
             }else{
                 header("location: nova_reserva.php");
             }
-        }
+        
 
 }
 

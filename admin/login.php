@@ -17,7 +17,6 @@ if ($_POST) {
     //$lista_session = $conn->query($verificaSQL);
     $lista_session = mysqli_query($conexao, $verificaSQL);
     $linha  = $lista_session->fetch_assoc();
-    $numeroLinhas = mysqli_num_rows($lista_session);
     // se a sessão não exixtir, iniciamos uma sessão
     if (!isset($_SESSION)) {
         $sessao_antiga = session_name("Churrascow");

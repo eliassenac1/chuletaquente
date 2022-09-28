@@ -31,8 +31,8 @@
                 <li class="active"><a href="../index.php">Home</a></li>
                 <li><a href="reserva_analise_lista.php">Em Análise</a></li>
                 <li><a href="reserva_confirmada_lista.php">Confirmadas</a></li>
-                <li><a href="reserva_cancelada_lista.php">Cancelada</a></li>
-                <li><a href="../menu_adm_cliente.php">Clientes</a></li>
+                <li><a href="reserva_cancelada_lista.php">Canceladas</a></li>
+                <li><a href="../menu_adm_mesas.php">Mesas</a></li>
                 <!-- Formulário de busca -->
                 <form action="reservas_busca.php" method="get" name="form_busca" id="form_busca" class="navbar-form navbar-left" role="search">
                         <div class="form-group">

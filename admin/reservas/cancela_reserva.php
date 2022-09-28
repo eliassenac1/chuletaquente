@@ -52,6 +52,17 @@ $lista_fk = $conexao->query($consulta_fk);
 $linha_fk = $lista_fk->fetch_assoc();
 $totalLinha_fk = $lista_fk->num_rows;
 
+//verifica se a reserva foi cancelada e altera o status da mesa e exclui vinculo de reserva na tbmesa
+$status = $linha['status_reserva'];
+if( $status == "Inativa"){
+    $query = "update tbmesa
+    set 
+    id_reserva_mesa = null,
+    status_da_mesa = default";
+
+$resultado = $conexao->query($query);
+}
+
 
 
 ?>

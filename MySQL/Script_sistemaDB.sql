@@ -1,5 +1,5 @@
--- create database sistemaDB;
- -- use sistemaDB;
+ -- create database sistematiDB;
+ -- use sistematiDB;
 -- estrutura da tabela de produtos
 create table tbprodutos(
 id_produto int(11) primary key auto_increment not null,
@@ -55,9 +55,8 @@ foto_usuario varchar(60) default null
 INSERT INTO `tbusuarios` (`id_usuario`, `login_usuario`, `senha_usuario`, `id_nivel_usuario`, `foto_usuario`) VALUES
 (1, 'senac', '1234', 1, 'senac.png'),
 (2, 'joao', '4568', 2, 'joao.png'),
-(3, 'maria', '7894', 3, 'maria.png'),
-(4, 'well', '1234', 1, 'well.png'),
-(5, 'marconys', '1234', 1, 'marconys.png');
+(3, 'elias', '7894', 3, 'elias.png'),
+(4, 'well', '1234', 1, 'well.png');
 
 
 create table tbnivel(
@@ -83,7 +82,7 @@ senha_cliente varchar(8) not null
 -- Inserindo dados da tabela `tbcliente`
 
 insert into `tbcliente` (`id_cliente`, `nome_cliente`, `cpf_cliente`, `email_cliente`, `senha_cliente`)
-values (6,'cliente', 12345678950, 'cliente@gmail.com', '1234');
+values (1,'cliente', 12345678950, 'cliente@gmail.com', '1234');
 
 
 -- Estrutura da tabela tbreserva
@@ -93,7 +92,7 @@ id_reserva int(11) primary key auto_increment not null,
 id_cliente_reserva int(11) not null,
 data_reserva date not null,
 hora_reserva time not null,
-numero_mesa_reserva int (11) not null,
+numero_mesa_reserva int (11) null,
 numero_pessoas_reserva int (11) not null,
 motivo_reserva varchar(100) null,
 valor_reserva decimal(10,2) null default 59.90,
@@ -102,12 +101,13 @@ parecer_reserva varchar(100) null
 
 )engine=InnoDB default charset=utf8;
 
--- Inserindo dados da tabela `tbreserva`
-
-insert into tbreserva(id_reserva, id_cliente_reserva, data_reserva, hora_reserva, numero_mesa_reserva, 
-numero_pessoas_reserva, motivo_reserva, motivo_recusa, valor_reserva, status_reserva)
-values (9,6,"2022-09-10", "19:00:00", 20, 7, "Confraternização", "" ,59.90, "Confirmada"),
-(8,1,"2022-10-09", "19:00:00", 20, 7, "Aniversário", "" ,59.90, default);
+create table tbmesa(
+id_mesa int(11) primary key auto_increment not null,
+id_reserva_mesa int(11) null,
+capcid_mesa int(11) not null,
+numero_da_mesa int(11) not null,
+status_da_mesa varchar(20) null default 'Disponível'
+)engine=InnoDB default charset=utf8;
 
 -- restrição (constraint) da tabela produtos
 alter table tbprodutos 
@@ -123,6 +123,11 @@ references tbcliente (id_cliente) on delete no action  on update no action;
 alter table tbusuarios
 add constraint id_nivel_usuario_fk foreign key (id_nivel_usuario)
 references tbnivel (id_nivel) on delete no action  on update no action;
+
+-- restrição (constraint) da tabela produtos
+alter table tbmesa 
+add constraint id_reserva_mesa_fk foreign key (id_reserva_mesa)
+references tbreserva (id_reserva) on delete no action  on update no action;
 
 -- view tbprodutos
 
@@ -151,6 +156,7 @@ select * from tbprodutos;
 select * from tbcliente;
 select * from tbreserva;
 select* from tbnivel;
+select* from tbmesa;
 
 -- Extraindo dados da tabela tbreserva 
 select r.id_reserva,

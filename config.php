@@ -1,4 +1,4 @@
 <?php 
-const SYS_NAME = "Churrascow";
+const SYS_NAME = "Chulleta Quente";
 
 ?>
